@@ -6,9 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Scanner;
-
-public class Atm {
-  public static void main(String [] args) {
+public class Atm {  public static void main(String [] args) {
 	  
 	  
 	  
@@ -18,10 +16,10 @@ public class Atm {
 //	       
 	  
 		  // getting an input from the user
-          System.out.println("Hey welcome to all in one atm ");
+          System.out.println("Hey welcome to all-in-one ATM ");
 		  Scanner sc=new Scanner(System.in);
 		  System.out.println("Press 1 to Create an Account");
-		  System.out.println("Press  2 to Processed transaction");
+		  System.out.println("Press 2 to Processed transaction");
 		  int Create=sc.nextInt();
 		  if(Create == 1) {
 			  try {
@@ -66,11 +64,11 @@ public class Atm {
 					  }
 					 
 				  }else {
-					  System.out.println("Make sure the entered Pin invalid..");
+					  System.out.println("Make sure the entered Pin invalid...");
 				  }
 				  
 			  }catch(Exception e) {
-				  System.out.println("Enter the valid datas");
+				  System.out.println("Enter the valid data's");
 			  }
 			  
 		  }else if (Create == 2) {
@@ -95,10 +93,10 @@ public class Atm {
 				  if(count>0) {
 					  System.out.println("Hello "+name);
 					  while(true) {// it will continuously loop until the user get exit
-						  System.out.println("Press 1 to chech Balance");
+						  System.out.println("Press 1 to Check Balance");
 						  System.out.println("Press 2 to Add amount");
-						  System.out.println("Press 3 to Take Amount");
-						  System.out.println("Press 4 to print the Recipt");
+						  System.out.println("Press 3 to Withdrawal Amount");
+						  System.out.println("Press 4 to Print the Receipt");
 						  System.out.println("Press 5 to Exit");
 						  int ch=0;
 						  System.out.println();
@@ -130,7 +128,9 @@ public class Atm {
 									  }else{
 										  balance =balance-take_amount;
 										 // int sub =st.executeUpdate("update list set balance ="+balance+"WHERE ac_number ="+pin);
-										  int sub=st.executeUpdate("update Atmuser set balance="+balance+"where pins="+pin);
+										  //int sub=st.executeUpdate("update Atmuser set balance="+balance+"where pins="+pin);
+										  int sub=st.executeUpdate("update Atmuser set balance="+balance+" where pins="+pin);
+
 										  System.out.println("Successfully withdrawd now your current balance is:"+balance);
 									  }
 									 
@@ -143,10 +143,10 @@ public class Atm {
 								  
 								  break;
 							  case 4:
-								  System.out.println("Thank you for comming");
+								  System.out.println("Thank you for coming");
 								  System.out.println("Your current balance is :"+balance);
 								  System.out.println("Amount add :"+amount);
-								  System.out.println("Amount takend :"+take_amount);
+								  System.out.println("Amount taken :"+take_amount);
 								
 								  break;
 							default :
